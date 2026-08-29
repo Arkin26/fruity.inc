@@ -12,8 +12,13 @@ export function FeaturedCards() {
 }
 
 function SalesBox() {
+  const loop = [...ACTIVE_SALES, ...ACTIVE_SALES];
+
   return (
-    <div className="relative flex aspect-[8/7] flex-col overflow-hidden rounded-2xl border border-white/10 bg-black">
+    <Link
+      href="/shop"
+      className="group relative flex aspect-[8/7] flex-col overflow-hidden rounded-2xl border border-white/10 bg-black"
+    >
       <div
         className="absolute inset-0 opacity-60"
         style={{
@@ -23,53 +28,28 @@ function SalesBox() {
         aria-hidden
       />
 
-      <div className="relative z-10 flex items-end justify-between px-5 pt-5">
-        <p className="font-[family-name:var(--font-display)] text-2xl font-bold uppercase leading-none tracking-wide text-white sm:text-3xl">
-          On Sale
-        </p>
-        <Link
-          href="/shop"
-          className="text-[10px] font-bold uppercase tracking-wide text-white/50 transition-colors hover:text-white sm:text-xs"
-        >
-          Shop All
-        </Link>
-      </div>
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 z-20 h-24 bg-gradient-to-b from-[#0d1520] via-[#0d1520]/80 to-transparent"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-24 bg-gradient-to-t from-black via-black/80 to-transparent"
+        aria-hidden
+      />
 
-      <div className="relative z-10 mt-4 flex flex-1 flex-col gap-2 overflow-hidden px-3 pb-3 sm:px-4 sm:pb-4">
-        <div
-          className="pointer-events-none absolute inset-x-0 top-0 z-20 h-6 bg-gradient-to-b from-[#0d1520] to-transparent"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-8 bg-gradient-to-t from-black to-transparent"
-          aria-hidden
-        />
-
-        <div className="animate-sales-elevator flex flex-col gap-2 will-change-transform motion-reduce:animate-none">
-          {[...ACTIVE_SALES, ...ACTIVE_SALES].map((sale, index) => (
-            <Link
-              key={`${sale.id}-${index}`}
-              href={sale.href}
-              className="group relative shrink-0 overflow-hidden rounded-xl border border-white/10 px-4 py-3 transition-colors hover:border-white/25"
+      <div className="relative z-10 flex flex-1 items-center justify-center overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0%,black_20%,black_80%,transparent_100%)]">
+        <div className="animate-sales-elevator flex flex-col items-center gap-8 will-change-transform motion-reduce:animate-none">
+          {loop.map((sale, index) => (
+            <p
+              key={`${sale}-${index}`}
+              className="shrink-0 font-[family-name:var(--font-display)] text-4xl font-bold uppercase leading-none tracking-wide text-white sm:text-5xl"
             >
-              <div
-                className="absolute inset-0 opacity-70 transition-opacity group-hover:opacity-90"
-                style={{ background: sale.gradient }}
-                aria-hidden
-              />
-              <div className="relative z-10 flex items-center justify-between gap-3">
-                <p className="font-[family-name:var(--font-display)] text-xs font-bold uppercase leading-tight tracking-wide text-white sm:text-sm">
-                  {sale.title}
-                </p>
-                <span className="shrink-0 rounded-sm bg-white px-2 py-1 font-[family-name:var(--font-display)] text-[10px] font-bold uppercase tracking-wide text-black sm:text-[11px]">
-                  {sale.discount}
-                </span>
-              </div>
-            </Link>
+              {sale}
+            </p>
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

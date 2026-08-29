@@ -33,13 +33,7 @@ export type Product = {
   colorId: string;
 };
 
-export type SaleItem = {
-  id: string;
-  title: string;
-  discount: string;
-  href: string;
-  gradient: string;
-};
+export const ACTIVE_SALES = ["25% OFF", "20% OFF", "15% OFF"];
 
 export const COLLECTION_CARD: FeaturedCard = {
   title: "| FIRST LIGHT – NEW COLLECTION",
@@ -47,33 +41,6 @@ export const COLLECTION_CARD: FeaturedCard = {
   gradient:
     "linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 50%, #151515 100%)",
 };
-
-export const ACTIVE_SALES: SaleItem[] = [
-  {
-    id: "1",
-    title: "FIRST LIGHT T-SHIRT BLACK",
-    discount: "25% OFF",
-    href: "/shop/first-light-tshirt-black",
-    gradient:
-      "linear-gradient(160deg, #312e81 0%, #1e1b4b 50%, #4338ca 100%)",
-  },
-  {
-    id: "2",
-    title: "FIRST LIGHT HOODIE WHITE",
-    discount: "20% OFF",
-    href: "/shop/first-light-hoodie-white",
-    gradient:
-      "linear-gradient(160deg, #134e4a 0%, #042f2e 50%, #115e59 100%)",
-  },
-  {
-    id: "3",
-    title: "FIRST LIGHT T-SHIRT WHITE",
-    discount: "15% OFF",
-    href: "/shop/first-light-tshirt-white",
-    gradient:
-      "linear-gradient(160deg, #7c2d12 0%, #431407 50%, #9a3412 100%)",
-  },
-];
 
 export const PRODUCT_DETAILS: ProductDetail[] = [
   {
