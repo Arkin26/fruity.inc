@@ -26,7 +26,9 @@ export type ProductDetail = {
 
 export type Product = {
   id: string;
+  shopTitle: string;
   title: string;
+  price: string;
   href: string;
   gradient: string;
   productId: string;
@@ -116,7 +118,9 @@ export const PRODUCT_DETAILS: ProductDetail[] = [
 export const PRODUCTS: Product[] = [
   {
     id: "1",
+    shopTitle: "FIRST LIGHT T-SHIRT - BLACK",
     title: "FIRST LIGHT T-SHIRT BLACK: BORN UNDER THE SAME ROOF",
+    price: "$48",
     href: "/shop/first-light-tshirt-black",
     gradient: "linear-gradient(180deg, #d4d4d8 0%, #a1a1aa 55%, #c4b5fd 100%)",
     productId: "first-light-tshirt",
@@ -124,7 +128,9 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "2",
+    shopTitle: "FIRST LIGHT T-SHIRT - WHITE",
     title: "FIRST LIGHT T-SHIRT WHITE: BORN UNDER THE SAME ROOF",
+    price: "$48",
     href: "/shop/first-light-tshirt-white",
     gradient: "linear-gradient(180deg, #e4e4e7 0%, #d4d4d8 55%, #ddd6fe 100%)",
     productId: "first-light-tshirt",
@@ -132,7 +138,9 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "3",
+    shopTitle: "FIRST LIGHT HOODIE - BLACK",
     title: "FIRST LIGHT HOODIE BLACK: BORN UNDER THE SAME ROOF",
+    price: "$98",
     href: "/shop/first-light-hoodie-black",
     gradient: "linear-gradient(180deg, #d4d4d8 0%, #a1a1aa 55%, #c4b5fd 100%)",
     productId: "first-light-hoodie",
@@ -140,13 +148,17 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "4",
+    shopTitle: "FIRST LIGHT HOODIE - WHITE",
     title: "FIRST LIGHT HOODIE WHITE: BORN UNDER THE SAME ROOF",
+    price: "$98",
     href: "/shop/first-light-hoodie-white",
     gradient: "linear-gradient(180deg, #e4e4e7 0%, #d4d4d8 55%, #ddd6fe 100%)",
     productId: "first-light-hoodie",
     colorId: "white",
   },
 ];
+
+export const FEATURED_PRODUCTS = PRODUCTS;
 
 export function getProductBySlug(slug: string) {
   for (const product of PRODUCT_DETAILS) {
