@@ -8,9 +8,9 @@ export default function Home() {
     <>
       <Hero />
       <div className="bg-black">
+        <ShopSection />
         <FeaturedCards />
         <AboutNewsSection />
-        <ShopSection />
         <SocialsSection />
       </div>
     </>
