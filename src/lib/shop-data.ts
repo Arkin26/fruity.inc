@@ -35,7 +35,12 @@ export type Product = {
   colorId: string;
 };
 
-export const ACTIVE_SALES = ["25% OFF", "20% OFF", "15% OFF"];
+export const SALES_POSTER = {
+  headline: "SALE IS LIVE",
+  highlight: "25% OFF",
+  description: "Selected First Light pieces — limited time only.",
+  href: "/shop",
+};
 
 export const COLLECTION_CARD: FeaturedCard = {
   title: "| FIRST LIGHT – NEW COLLECTION",

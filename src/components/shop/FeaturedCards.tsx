@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ACTIVE_SALES, COLLECTION_CARD } from "@/lib/shop-data";
+import { COLLECTION_CARD, SALES_POSTER } from "@/lib/shop-data";
 
 export function FeaturedCards() {
   return (
@@ -12,15 +12,13 @@ export function FeaturedCards() {
 }
 
 function SalesBox() {
-  const loop = [...ACTIVE_SALES, ...ACTIVE_SALES];
-
   return (
     <Link
-      href="/shop"
-      className="group relative flex aspect-[8/7] flex-col overflow-hidden rounded-2xl border border-white/10 bg-black"
+      href={SALES_POSTER.href}
+      className="group relative flex aspect-[8/7] flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black px-6 text-center"
     >
       <div
-        className="absolute inset-0 opacity-60"
+        className="absolute inset-0 opacity-70 transition-opacity group-hover:opacity-80"
         style={{
           background:
             "linear-gradient(160deg, #1a2a4a 0%, #0d1520 40%, #1e3a5f 100%)",
@@ -28,26 +26,16 @@ function SalesBox() {
         aria-hidden
       />
 
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 z-20 h-24 bg-gradient-to-b from-[#0d1520] via-[#0d1520]/80 to-transparent"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-24 bg-gradient-to-t from-black via-black/80 to-transparent"
-        aria-hidden
-      />
-
-      <div className="relative z-10 flex flex-1 items-center justify-center overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0%,black_20%,black_80%,transparent_100%)]">
-        <div className="animate-sales-elevator flex flex-col items-center gap-8 will-change-transform motion-reduce:animate-none">
-          {loop.map((sale, index) => (
-            <p
-              key={`${sale}-${index}`}
-              className="shrink-0 font-[family-name:var(--font-display)] text-4xl font-bold uppercase leading-none tracking-wide text-white sm:text-5xl"
-            >
-              {sale}
-            </p>
-          ))}
-        </div>
+      <div className="relative z-10 flex flex-col items-center gap-4">
+        <p className="font-[family-name:var(--font-display)] text-3xl font-bold uppercase leading-none tracking-wide text-white sm:text-4xl">
+          {SALES_POSTER.headline}
+        </p>
+        <p className="font-[family-name:var(--font-display)] text-5xl font-bold uppercase leading-none tracking-wide text-white sm:text-6xl">
+          {SALES_POSTER.highlight}
+        </p>
+        <p className="max-w-[16rem] text-sm leading-relaxed text-white/60 sm:text-base">
+          {SALES_POSTER.description}
+        </p>
       </div>
     </Link>
   );

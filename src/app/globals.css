@@ -38,22 +38,8 @@ body {
   animation: news-elevator 28s linear infinite;
 }
 
-@keyframes sales-elevator {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-50%);
-  }
-}
-
-.animate-sales-elevator {
-  animation: sales-elevator 18s linear infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .animate-news-elevator,
-  .animate-sales-elevator {
+  .animate-news-elevator {
     animation: none;
   }
 }
