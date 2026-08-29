@@ -5,25 +5,144 @@ export type FeaturedCard = {
   gradient: string;
 };
 
+export type ProductColor = {
+  id: string;
+  label: string;
+  swatch: string;
+  gradient: string;
+  slug: string;
+};
+
+export type ProductDetail = {
+  id: string;
+  title: string;
+  subtitle: string;
+  price: string;
+  description: string;
+  sizes: string[];
+  colors: ProductColor[];
+  info: string[];
+};
+
 export type Product = {
   id: string;
   title: string;
   href: string;
   gradient: string;
+  productId: string;
+  colorId: string;
 };
 
-export const FEATURED_CARDS: FeaturedCard[] = [
+export type SaleItem = {
+  id: string;
+  title: string;
+  discount: string;
+  href: string;
+  gradient: string;
+};
+
+export const COLLECTION_CARD: FeaturedCard = {
+  title: "| FIRST LIGHT – NEW COLLECTION",
+  href: "/collection/first-light",
+  gradient:
+    "linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 50%, #151515 100%)",
+};
+
+export const ACTIVE_SALES: SaleItem[] = [
   {
-    title: "ABOUT FRUITY INC",
-    href: "/about",
+    id: "1",
+    title: "FIRST LIGHT T-SHIRT BLACK",
+    discount: "25% OFF",
+    href: "/shop/first-light-tshirt-black",
     gradient:
-      "linear-gradient(160deg, #1a2a4a 0%, #0d1520 40%, #1e3a5f 100%)",
+      "linear-gradient(160deg, #312e81 0%, #1e1b4b 50%, #4338ca 100%)",
   },
   {
-    title: "| FIRST LIGHT – NEW COLLECTION",
-    href: "/collection/first-light",
+    id: "2",
+    title: "FIRST LIGHT HOODIE WHITE",
+    discount: "20% OFF",
+    href: "/shop/first-light-hoodie-white",
     gradient:
-      "linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 50%, #151515 100%)",
+      "linear-gradient(160deg, #134e4a 0%, #042f2e 50%, #115e59 100%)",
+  },
+  {
+    id: "3",
+    title: "FIRST LIGHT T-SHIRT WHITE",
+    discount: "15% OFF",
+    href: "/shop/first-light-tshirt-white",
+    gradient:
+      "linear-gradient(160deg, #7c2d12 0%, #431407 50%, #9a3412 100%)",
+  },
+];
+
+export const PRODUCT_DETAILS: ProductDetail[] = [
+  {
+    id: "first-light-tshirt",
+    title: "FIRST LIGHT T-SHIRT",
+    subtitle: "BORN UNDER THE SAME ROOF",
+    price: "$48",
+    description:
+      "Heavyweight cotton tee from the First Light collection. Relaxed fit with a soft hand feel and screen-printed graphic on the chest.",
+    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    colors: [
+      {
+        id: "black",
+        label: "Black",
+        swatch: "#1a1a1a",
+        slug: "first-light-tshirt-black",
+        gradient:
+          "linear-gradient(180deg, #d4d4d8 0%, #a1a1aa 55%, #c4b5fd 100%)",
+      },
+      {
+        id: "white",
+        label: "White",
+        swatch: "#f5f5f5",
+        slug: "first-light-tshirt-white",
+        gradient:
+          "linear-gradient(180deg, #e4e4e7 0%, #d4d4d8 55%, #ddd6fe 100%)",
+      },
+    ],
+    info: [
+      "100% premium cotton, 240gsm heavyweight jersey",
+      "Relaxed unisex fit — size up for an oversized look",
+      "Screen-printed First Light graphic on chest",
+      "Machine wash cold, tumble dry low",
+      "Part of the First Light collection — limited run",
+    ],
+  },
+  {
+    id: "first-light-hoodie",
+    title: "FIRST LIGHT HOODIE",
+    subtitle: "BORN UNDER THE SAME ROOF",
+    price: "$98",
+    description:
+      "Oversized pullover hoodie from the First Light collection. Brushed fleece interior with kangaroo pocket and embroidered logo.",
+    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    colors: [
+      {
+        id: "black",
+        label: "Black",
+        swatch: "#1a1a1a",
+        slug: "first-light-hoodie-black",
+        gradient:
+          "linear-gradient(180deg, #d4d4d8 0%, #a1a1aa 55%, #c4b5fd 100%)",
+      },
+      {
+        id: "white",
+        label: "White",
+        swatch: "#f5f5f5",
+        slug: "first-light-hoodie-white",
+        gradient:
+          "linear-gradient(180deg, #e4e4e7 0%, #d4d4d8 55%, #ddd6fe 100%)",
+      },
+    ],
+    info: [
+      "80% cotton / 20% polyester fleece, 380gsm",
+      "Oversized fit with dropped shoulders",
+      "Embroidered First Light logo on chest",
+      "Kangaroo pocket and ribbed cuffs & hem",
+      "Part of the First Light collection — limited run",
+    ],
   },
 ];
 
@@ -33,23 +152,47 @@ export const PRODUCTS: Product[] = [
     title: "FIRST LIGHT T-SHIRT BLACK: BORN UNDER THE SAME ROOF",
     href: "/shop/first-light-tshirt-black",
     gradient: "linear-gradient(180deg, #d4d4d8 0%, #a1a1aa 55%, #c4b5fd 100%)",
+    productId: "first-light-tshirt",
+    colorId: "black",
   },
   {
     id: "2",
     title: "FIRST LIGHT T-SHIRT WHITE: BORN UNDER THE SAME ROOF",
     href: "/shop/first-light-tshirt-white",
     gradient: "linear-gradient(180deg, #e4e4e7 0%, #d4d4d8 55%, #ddd6fe 100%)",
+    productId: "first-light-tshirt",
+    colorId: "white",
   },
   {
     id: "3",
     title: "FIRST LIGHT HOODIE BLACK: BORN UNDER THE SAME ROOF",
     href: "/shop/first-light-hoodie-black",
     gradient: "linear-gradient(180deg, #d4d4d8 0%, #a1a1aa 55%, #c4b5fd 100%)",
+    productId: "first-light-hoodie",
+    colorId: "black",
   },
   {
     id: "4",
     title: "FIRST LIGHT HOODIE WHITE: BORN UNDER THE SAME ROOF",
     href: "/shop/first-light-hoodie-white",
     gradient: "linear-gradient(180deg, #e4e4e7 0%, #d4d4d8 55%, #ddd6fe 100%)",
+    productId: "first-light-hoodie",
+    colorId: "white",
   },
 ];
+
+export function getProductBySlug(slug: string) {
+  for (const product of PRODUCT_DETAILS) {
+    const color = product.colors.find((c) => c.slug === slug);
+    if (color) {
+      return { product, activeColor: color };
+    }
+  }
+  return null;
+}
+
+export function getAllProductSlugs() {
+  return PRODUCT_DETAILS.flatMap((product) =>
+    product.colors.map((color) => color.slug),
+  );
+}
