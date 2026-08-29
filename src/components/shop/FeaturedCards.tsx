@@ -4,8 +4,8 @@ import { COLLECTION_CARD, SALES_POSTER } from "@/lib/shop-data";
 
 export function FeaturedCards() {
   return (
-    <section className="px-2 pt-2 pb-12 sm:pb-16 md:px-4 md:pb-20">
-      <div className="grid grid-cols-1 gap-2 md:h-[min(28vw,22rem)] md:grid-cols-[2fr_3fr] md:gap-3">
+    <section className="px-2 pt-12 pb-12 sm:pt-16 sm:pb-16 md:px-4 md:pt-20 md:pb-20">
+      <div className="grid grid-cols-1 gap-2 md:h-[min(36.4vw,28.6rem)] md:grid-cols-[2fr_3fr] md:gap-3">
         <SalesBox />
         <CollectionCard card={COLLECTION_CARD} />
       </div>
@@ -17,7 +17,7 @@ function SalesBox() {
   return (
     <Link
       href={SALES_POSTER.href}
-      className="group relative flex aspect-[10/7] h-full min-h-0 flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black px-6 text-center md:aspect-auto"
+      className="group relative flex aspect-[10/9] h-full min-h-0 flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black px-6 text-center md:aspect-auto"
     >
       <div
         className="absolute inset-0 opacity-70 transition-opacity group-hover:opacity-80"
@@ -51,7 +51,7 @@ function CollectionCard({
   return (
     <Link
       href={card.href}
-      className="group relative block aspect-[10/7] h-full min-h-0 overflow-hidden rounded-2xl border border-white/10 md:aspect-auto"
+      className="group relative block aspect-[10/9] h-full min-h-0 overflow-hidden rounded-2xl border border-white/10 md:aspect-auto"
     >
       <div
         className="absolute inset-0"
