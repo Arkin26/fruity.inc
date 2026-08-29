@@ -1,5 +1,5 @@
+import { AboutNewsSection } from "@/components/about";
 import { Hero } from "@/components/layout/Hero";
-import { NewsSection } from "@/components/news";
 import { FeaturedCards, ShopSection } from "@/components/shop";
 import { SocialsSection } from "@/components/socials";
 
@@ -8,10 +8,10 @@ export default function Home() {
     <>
       <Hero />
       <div className="bg-black">
+        <AboutNewsSection />
         <FeaturedCards />
         <ShopSection />
         <SocialsSection />
-        <NewsSection />
       </div>
     </>
   );

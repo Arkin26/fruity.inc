@@ -24,3 +24,22 @@ body {
 body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
+
+@keyframes news-elevator {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-news-elevator {
+  animation: news-elevator 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-news-elevator {
+    animation: none;
+  }
+}
